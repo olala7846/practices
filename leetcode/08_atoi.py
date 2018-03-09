@@ -1,4 +1,8 @@
 
+# The leetcode test cases doesn't make much sense,
+# I'll just skip it for now
+
+
 def atoi(s):
     s = s.strip()
     idx = 0
