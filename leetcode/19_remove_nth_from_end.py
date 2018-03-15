@@ -1,16 +1,6 @@
-class ListNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.next = None
-
-    def __repr__(self):
-        s = ''
-        head = self
-        while head:
-            s += '({}) -> '.format(head.val)
-            head = head.next
-        return s
-
+from linkedlist import ListNode
+from linkedlist import array_to_nodes
+from linkedlist import nodes_to_array
 
 def remove_nth_from_end(head, n):
     fast = head
@@ -29,29 +19,10 @@ def remove_nth_from_end(head, n):
     return head
 
 
-def to_nodes(numbers):
-    head = None
-    tail = None
-    for i in numbers:
-        if tail:
-            tail.next = ListNode(i)
-            tail = tail.next
-        else:
-            head = ListNode(i)
-            tail = head
-    return head
-
-def to_list(head):
-    results = []
-    while head:
-        results.append(head.val)
-        head = head.next
-    return results
-
 def test(nums, n):
-    head = to_nodes(nums)
+    head = array_to_nodes(nums)
     result = remove_nth_from_end(head, n)
-    return to_list(result)
+    return nodes_to_array(result)
 
 assert test([1], 1) == []
 assert test([1, 2, 3, 4], 1) == [1, 2, 3]
