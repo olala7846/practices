@@ -7,9 +7,10 @@ class ListNode(object):
     def __repr__(self):
         s = ''
         head = self
-        while head:
-            s += '({}) -> '.format(head.val)
-            head = head.next
+        return '(' + str(head.val) + ')'
+        # while head:
+        #     s += '({}) -> '.format(head.val)
+        #     head = head.next
         return s
 
 def array_to_nodes(numbers):
